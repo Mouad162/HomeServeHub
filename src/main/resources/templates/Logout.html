@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Logout</title>
+    <style>
+        body {
+            background-image: url('/pexels-olly-3771827.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .reconnect-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .reconnect-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="message">
+        <p>Thank you for your trust!</p>
+        <p>Please click the button below to reconnect.</p>
+    </div>
+    <a th:href="@{loginUser}" class="reconnect-btn">Reconnect</a>
+</div>
+</body>
+</html>

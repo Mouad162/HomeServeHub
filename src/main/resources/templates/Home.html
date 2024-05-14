@@ -1,0 +1,55 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="TemplateUser.html"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Cart</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content">
+    <h1 class="text-center">Services Cart</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="/pexels-emmages-8005397.jpg" class="card-img-top" alt="Service 1">
+                <div class="card-body">
+                    <h5 class="card-title">Electricien</h5>
+                    <p class="card-text">Mr.Abdo</p>
+                    <p class="card-text">100 dhs/hr</p>
+                    <a href="#" class="btn btn-primary">Reserver</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="/pexels-ketut-subiyanto-4353615.jpg" class="card-img-top" alt="Service 2">
+                <div class="card-body">
+                    <h5 class="card-title">Femme de menage</h5>
+                    <p class="card-text">Lalla Touria</p>
+                    <p class="card-text">50 dhs/hr</p>
+                    <a href="#" class="btn btn-primary">Reserver</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="/pexels-kindelmedia-8486978.jpg" class="card-img-top" alt="Service 3">
+                <div class="card-body">
+                    <h5 class="card-title">Plombier</h5>
+                    <p class="card-text">Khadija Robinet</p>
+                    <p class="card-text">100 dhs/hr</p>
+                    <a href="#" class="btn btn-primary">Reserver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="#" class="btn btn-primary">Votre calendier de reservation</a>
+    </div>
+    <br><br><br><br>
+</div>
+</body>
+</html>

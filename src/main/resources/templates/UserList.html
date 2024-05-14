@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="TemplateAdmin.html"
+>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap-grid.min.css">
+    <style>
+        header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .pagination-btn {
+            background-color: #0a02fc;
+            border-color: #0a02fc;
+            color: #ffffff;
+            margin: 0 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+
+        .pagination-btn:hover {
+            background-color: #0a02fc;
+            border-color: #000000;
+        }
+
+        .active-pagination-btn {
+            background-color: #0a02fc;
+            border-color: #ffffff;
+        }
+    </style>
+    <title>Users List</title>
+</head>
+<body>
+<div layout:fragment="content">
+<main>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">User Type</th>
+            <th scope="col">User State</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user:${userVue.content}">
+            <td th:text="${user.userId}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.address}"></td>
+            <td th:text="${user.phoneNumber}"></td>
+            <td th:text="${user.userType}"></td>
+            <td th:text="${user.userState}"></td>
+            <td>
+                <a class="btn bg-danger"
+                   onclick="return confirm('Are you sure to delete this user ?')"
+                   th:href="@{deleteUser(id=${user.userId})}">
+                    Delete
+                </a>
+            </td>
+            <td>
+                <a class="btn bg-success"
+                   th:href="@{editUser(id=${user.userId})}">
+                    Edit
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <ul class="pagination justify-content-center">
+        <li th:each="page,status:${page}">
+            <a th:class="${status.index==currentPage?'pagination-btn active-pagination-btn':'pagination-btn'}"
+               th:href="@{userList(page=${status.index},size=${size})}"
+               th:text="${status.index}"
+            ></a>
+        </li>
+    </ul>
+</main>
+    <br><br><br><br>
+</div>
+</body>
+</html>
